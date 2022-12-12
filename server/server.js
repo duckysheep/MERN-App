@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
@@ -15,6 +16,10 @@ app.use(express.static("../client/dist"));
 
 app.get("/", (req, res) => {
   res.json({ msg: "Hello World!" });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("..", "client", "dist", "index.html"));
 });
 
 mongoose.connection.once("open", () => {
