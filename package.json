@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "��#\u0000 \u0000M\u0000E\u0000R\u0000N\u0000-\u0000A\u0000p\u0000p\u0000\r\u0000 \u0000",
   "scripts": {
+    "build": "cd client && npm run build",
     "start": "cd server && npm run start"
   },
   "workspaces": [
